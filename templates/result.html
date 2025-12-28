@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Meal Plan</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<style>
+    body {
+        background-color: #f0f8ff;
+        font-family: Arial, sans-serif;
+    }
+    .form-container {
+        width: 400px;
+        margin: 50px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px gray;
+    }
+    input, select, button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+    }
+    
+</style>
+<body>
+    <div class="form-container">
+        <h1>Your Daily Meal Plan</h1>
+        <h3>Recommended Total Calories: {{ total_calories }} kcal</h3>
+
+        <h2>Breakfast:</h2>
+        <p><b>{{ breakfast['Dish'] }}</b> ({{ breakfast['Calories'] }} kcal)</p>
+
+        <h2>Lunch:</h2>
+        <p><b>{{ lunch['Dish'] }}</b> ({{ lunch['Calories'] }} kcal)</p>
+
+        <h2>Dinner:</h2>
+        <p><b>{{ dinner['Dish'] }}</b> ({{ dinner['Calories'] }} kcal)</p>
+
+        <a href="/">Try Again</a>
+    </div>
+</body>
+</html>

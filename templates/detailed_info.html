@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose Exercise</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+    .section {
+      padding: 50px 0;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .section h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .section h1 span {
+      color: #FF5733;
+    }
+
+    .dropdowns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .dropdown-container {
+      width: 90%;
+      max-width: 8000px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      background-color: #fefefe;
+    }
+
+    .dropdown-btn {
+      background-color: #FF5733;
+      color: white;
+      padding: 18px 24px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .dropdown-btn:hover {
+      background-color: #e74c3c;
+    }
+
+    .dropdown-content {
+      display: none;
+      background-color: #fff;
+      padding: 15px 30px;
+    }
+
+    .dropdown-content button {
+      display: block;
+      background-color: #f4f4f4;
+      border: none;
+      margin: 10px 0;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .dropdown-content button:hover {
+      background-color:rgb(223, 96, 67);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h1>CHOOSE <span>EXERCISE</span></h1>
+    <p>Select a muscle group and explore exercises with posture tracking and form correction.</p>
+
+    <div class="dropdowns">
+      <!-- Legs -->
+      <div class="dropdown-container">
+        <button class="dropdown-btn" onclick="toggleDropdown('legs')">Legs Exercises ▼</button>
+        <div id="legs" class="dropdown-content">
+          <button onclick="location.href='/squats_info'">Squats</button>
+          <button onclick="location.href='/lunges_info'">Lunges</button>
+          <button onclick="location.href='/sumo_squats_info'">Sumo Squats</button>
+        </div>
+      </div>
+
+      <!-- Chest -->
+      <div class="dropdown-container">
+        <button class="dropdown-btn" onclick="toggleDropdown('chest')">Shoulder Exercises ▼</button>
+        <div id="chest" class="dropdown-content">
+          <button onclick="location.href='/shoulder_raises_info'">Shoulder Raises</button>
+          <button onclick="location.href='/lateral_raises_info'">Lateral Raises</button>
+          <button onclick="location.href='/rear_delt_fly_info'">Rear Delts</button>
+        </div>
+      </div>
+
+      <!-- Back -->
+      <div class="dropdown-container">
+        <button class="dropdown-btn" onclick="toggleDropdown('back')">Back Exercises ▼</button>
+        <div id="back" class="dropdown-content">
+          <button onclick="location.href='/deadlift_info'">Deadlifts</button>
+          <button onclick="location.href='/pullup_info'">Pull-ups</button>
+          <button onclick="location.href='/arm_rowing_info'">Arm Rowing</button>
+        </div>
+      </div>
+
+      <!-- Arms -->
+      <div class="dropdown-container">
+        <button class="dropdown-btn" onclick="toggleDropdown('arms')">Arm Exercises ▼</button>
+        <div id="arms" class="dropdown-content">
+          <button onclick="location.href='/bicep_curls_info'">Bicep Curls</button>
+          <button onclick="location.href='/tricep_pushback_info'">Tricep Pushbacks</button>
+          <button onclick="location.href='/hammer_curls_info'">Hammer Curls</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function toggleDropdown(id) {
+      const content = document.getElementById(id);
+      const allDropdowns = document.querySelectorAll(".dropdown-content");
+      allDropdowns.forEach(drop => {
+        if (drop !== content) drop.style.display = "none";
+      });
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

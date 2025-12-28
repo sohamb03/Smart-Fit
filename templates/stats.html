@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitness Stats</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fffaf5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff7f50;
+        }
+
+        .comment {
+            background-color: #fff0e6;
+            border: 1px solid #ffc9a5;
+            color: #b35620;
+            padding: 15px;
+            margin: 0 auto 30px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .chart-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .chart-container {
+            background: #ffffff;
+            border: 1px solid #ffe1cc;
+            border-radius: 14px;
+            padding: 20px;
+            width: 400px;
+            box-shadow: 0 4px 12px rgba(255, 127, 80, 0.1);
+        }
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .extended-stats {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(255, 127, 80, 0.1);
+            border: 1px solid #ffe1cc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ffe1cc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #fff0e6;
+            color: #b35620;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #ff7f50;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Combined Progress Dashboard</h1>
+
+    <div class="comment">
+        <strong>Feedback:</strong> {{ comment }}
+    </div>
+
+    <div class="chart-grid">
+        <div class="chart-container"><canvas id="weightChart"></canvas></div>
+        <div class="chart-container"><canvas id="stepsChart"></canvas></div>
+        <div class="chart-container"><canvas id="caloriesChart"></canvas></div>
+        <div class="chart-container"><canvas id="heartRateChart"></canvas></div>
+        <div class="chart-container"><canvas id="repsChart"></canvas></div>
+        <div class="chart-container"><canvas id="durationChart"></canvas></div>
+    </div>
+
+    <div class="extended-stats">
+        <h2 style="color: #ff7f50; text-align:center;">Extended Fitness Metrics</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Exercise</th>
+                <th>Duration (min)</th>
+                <th>Weight (kg)</th>
+                <th>Steps</th>
+                <th>Calories</th>
+                <th>Heart Rate</th>
+                <th>Reps</th>
+            </tr>
+            {% for r in records %}
+            <tr>
+                <td>{{ r.date }}</td>
+                <td>{{ r.exercise }}</td>
+                <td>{{ r.duration }}</td>
+                <td>{{ r.weight }}</td>
+                <td>{{ r.steps if r.steps is not none else 'N/A' }}</td>
+                <td>{{ r.calories if r.calories is not none else 'N/A' }}</td>
+                <td>{{ r.heart_rate if r.heart_rate is not none else 'N/A' }}</td>
+                <td>{{ r.reps if r.reps is not none else 'N/A' }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <a href="{{ url_for('index') }}">← Back to Dashboard</a>
+
+    <script>
+        const dates = {{ dates | safe }};
+        const weights = {{ weights | safe }};
+        const steps = {{ steps | safe }};
+        const calories = {{ calories | safe }};
+        const heartRates = {{ heart_rates | safe }};
+        const reps = {{ reps | safe }};
+        const durations = {{ durations | safe }};
+
+        const createChart = (canvasId, label, data, color) => {
+            new Chart(document.getElementById(canvasId), {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        borderColor: color,
+                        backgroundColor: color.replace('1)', '0.15)'),
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointHoverRadius: 7
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    interaction: {
+                        mode: 'nearest',
+                        axis: 'x',
+                        intersect: false
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: label
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        }
+                    }
+                }
+            });
+        };
+
+        createChart('weightChart', 'Weight (kg)', weights, 'rgba(255, 127, 80, 1)');
+        createChart('stepsChart', 'Steps', steps, 'rgba(255, 140, 0, 1)');
+        createChart('caloriesChart', 'Calories', calories, 'rgba(255, 99, 71, 1)');
+        createChart('heartRateChart', 'Heart Rate (bpm)', heartRates, 'rgba(255, 165, 0, 1)');
+        createChart('repsChart', 'Reps', reps, 'rgba(255, 112, 67, 1)');
+        createChart('durationChart', 'Duration (min)', durations, 'rgba(255, 204, 128, 1)');
+    </script>
+</body>
+</html>

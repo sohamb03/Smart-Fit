@@ -1,0 +1,608 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Studio</title>
+    <style>
+      /* General Reset */
+      body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        box-sizing: border-box;
+      }
+
+      /* Navbar */
+      .navbar {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        padding: 10px 20px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .logo .highlight {
+        color: #ff4d4d;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li {
+        display: inline-block;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        transition: color 0.3s;
+        background-color: ##ff4d4d; /* Button background */
+
+      }
+
+      .nav-links a:hover {
+        color: #ff4d4d;
+      }
+
+      .nav-links .btn-signup {
+        background: #ff4d4d;
+        padding: 8px 15px;
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .nav-links .btn-signup:hover {
+        background: #e63333;
+      }
+      .nav-links .username {
+        color: #ff4d4d; /* Username text color */
+    }
+
+      /* Hero Section */
+      .hero {
+        background: url('https://miro.medium.com/v2/resize:fit:1400/1*mhruv30cGh2UAm_c9-Ti9Q.gif') center center / cover no-repeat;
+        height: 100vh;
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin: 0;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin: 20px 0;
+      }
+
+      .hero .btn-cta {
+        background: #ff4d4d;
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .hero .btn-cta:hover {
+        background: #e63333;
+      }
+
+      section.programs {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #fff;
+    }
+    
+    section.programs h2 {
+        font-size: 2.5em;
+        color: #333;
+        text-transform: uppercase;
+    }
+    
+    section.programs h2 span {
+        color: #ff4b2b;
+    }
+    
+    section.programs p {
+        font-size: 1em;
+        color: #666;
+        margin: 10px auto 30px;
+        max-width: 600px;
+    }
+    
+    .program-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+        gap: 20px; /* Space between items */
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+    
+    .program-item {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        transition: transform 0.3s ease; /* Smooth scaling */
+    }
+    
+    .program-item:hover {
+        transform: scale(1.05); /* Increase size slightly on hover */
+    }
+    
+    .program-icon {
+        width: 140px;
+        height: 140px;
+        margin-right: 20px;
+    }
+    
+    .program-text h3 {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .program-text p {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    
+    .program-text .discover {
+        text-decoration: none;
+        color: #ff4b2b;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9em;
+    }
+
+      .banner {
+          background-image: url("https://img.freepik.com/premium-photo/fitness-man-rock-climbing-gym-wall-generative-ai_804788-70075.jpg"); /* Replace with your gym image */
+          background-size: cover;
+          background-position: center;
+          height: 400px; /* Adjust height as needed */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+      }
+      
+      .banner-content {
+          text-align: center;
+      }
+      
+      .banner-content h1 {
+          font-size: 36px;
+          margin-bottom: 20px;
+      }
+      
+      .banner-content p {
+          font-size: 18px;
+          margin-bottom: 20px;   
+      
+      }
+      
+      .btn {
+          background-color: #e74c3c;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      
+      .btn:hover {
+          background-color: #c0392b;   
+      
+      }
+
+      .about-us {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px;
+        background-color: white;
+      }
+      
+      .image-container {
+        position: relative;
+        width: 50%;
+      }
+      
+      .image-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        padding: 20px;
+      }
+      
+      .play-btn {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      
+      .content {
+        width: 45%;
+        padding-left: 30px;
+      }
+      
+      .content h2 {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      
+      .content p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      
+      .read-more {
+        color: white;
+        background-color: #f56a00;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      
+      .read-more:hover {
+        background-color: #e55e00;
+      }
+
+      .team-section {
+    text-align: center;
+    padding: 100px 0;
+    
+  }
+
+  .team-section h2 {
+    font-size: 36px;
+    margin-bottom: 70px;
+  }
+
+  .team-members {
+    display: flex;
+    justify-content: space-between; /* Align items with minimal space */
+    flex-wrap: wrap;
+    gap: 20px; /* Reduce gap between items */
+  }
+
+  .team-member {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0; /* Reduce top and bottom margin */
+    width: 30%; /* Adjust width for better spacing */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .team-member:hover {
+    transform: translateY(-10px);
+  }
+
+  .team-member img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .member-info {
+    padding: 20px;
+    background-color: #e9e9e9;
+  }
+
+  .member-info h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .member-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .social-links a {
+    font-size: 16px;
+    color: #333;
+    margin: 0 5px;
+    text-decoration: none;
+  }
+
+  .social-links a:hover {
+    color: #e74c3c;
+  }
+
+  .more-services {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+
+  .more-services:hover {
+    background-color: #c0392b;
+  }
+  .team-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .team-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  .team-members {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px; /* Reduce gap between items */
+    padding: 0 200px; /* Add padding on left and right for the entire section */
+  }
+
+  .team-member {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0; /* Reduce top and bottom margin */
+    width: calc(33.33% - 20px); /* Adjust width to account for the gap and padding */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .team-member:hover {
+    transform: translateY(-10px);
+  }
+
+  .team-member img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .member-info {
+    padding: 20px;
+    background-color: #e9e9e9;
+  }
+
+  .member-info h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .member-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .social-links a {
+    font-size: 16px;
+    color: #333;
+    margin: 0 5px;
+    text-decoration: none;
+  }
+
+  .social-links a:hover {
+    color: #e74c3c;
+  }
+
+  .more-services {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+
+  .more-services:hover {
+    background-color: #c0392b;
+  }
+
+
+
+      
+      
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="container">
+          <div class="logo">SMART<span class="highlight">FIT</span></div>
+          <ul class="nav-links">
+              <li><a href="/">Home</a></li>
+              {% if username %}
+              <li class="username"> {{ username }}</li>
+              <li><a href="/logout">Logout</a></li>
+              {% else %}
+              <li><a href="/login1">Login</a></li>
+              {% endif %}
+              <li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
+          </ul>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="logo"><h1><span class="highlight">EASY </SPAN>WITH <span class="highlight">OUR </SPAN> SERVICES </h2></span></div>
+      <p>Work harder, get stronger</p>
+      <a href="http://127.0.0.1:5000/signup1" class="btn-cta">BECOME A MEMBER</a>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+      <h2>CHOOSE <span>PROGRAM</span></h2>
+      <p>"Choose from a variety of programs tailored to your fitness needs, including a Posture Corrector, Diet Recommendation Plan, Detailed Posture Analysis, and a Find Nearby Gyms option to elevate your fitness journey!".</p>
+      <div class="program-grid">
+          <!-- Program Item 1 -->
+          <div class="program-item">
+              <img src="https://i.ibb.co/bQKkvZd/Screenshot-2024-11-21-173037.png" alt="Program Icon" class="program-icon">
+              <div class="program-text">
+                  <h3>Correct your posture here!</h3>
+                  <p>"Experience our Deep Learning-based Posture Corrector for real-time feedback and improved form during your workouts!"</p>
+                  <a href="/exercise_selection_temp" class="discover">Discover More</a>
+              </div>
+          </div>
+          <!-- Program Item 2 -->
+          <div class="program-item">
+              <img src="https://i.ibb.co/bQKkvZd/Screenshot-2024-11-21-173037.png" alt="Program Icon" class="program-icon">
+              <div class="program-text">
+                  <h3>Diet Solutions</h3>
+                  <p>
+                    "Get personalized diet recommendations tailored to your fitness goals and lifestyle!"</p>
+                    <a href="/chatbot" class="discover">Discover More</a>
+                  </div>
+                </div>
+                <!-- Program Item 3 -->
+                <div class="program-item">
+                  <img src="https://i.ibb.co/bQKkvZd/Screenshot-2024-11-21-173037.png" alt="Program Icon" class="program-icon">
+                  <div class="program-text">
+                    <h3>Progress Trackers</h3>
+                    <p>
+                      "Track your fitness journey with visual insights and stay motivated every step of the way!"</p>
+                  
+                  <a href="/set_goal" class="discover">Discover More</a>
+              </div>
+          </div>
+          <!-- Program Item 4 -->
+          <div class="program-item">
+              <img src="https://i.ibb.co/bQKkvZd/Screenshot-2024-11-21-173037.png" alt="Program Icon" class="program-icon">
+              <div class="program-text">
+                  <h3>Detailed exercise info</h3>
+                  <p>"Access detailed exercise information to perfect your form and maximize results!"
+                    </p>
+                  <a href="/detailed_info" class="discover">Discover More</a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+
+  <div class="about-us">
+    <div class="image-container">
+      <img src="https://img.freepik.com/premium-photo/healthy-athlete-doing-push-ups-as-part-bodybuilding-training-bench_600776-11118.jpg" alt="Fitness Image">
+    </div>
+    <div class="content">
+      <h2>STORY ABOUT US</h2>
+      <p style="text-align: justify; font-size: 18px; line-height: 1.6; color: #333;">At Smartfit, we’re dedicated to helping you achieve your fitness goals with a comprehensive platform that combines posture correction, gym discovery, detailed exercise guidance, and personalized diet recommendations. Our AI-powered posture corrector ensures you maintain proper alignment, while our gym locator helps you find nearby fitness centers that match your needs. With a vast library of exercises and step-by-step instructions, we make sure you perform each movement safely and effectively. Additionally, our tailored diet plans support your fitness journey, offering the right nutrition for your specific goals. We're here to guide you every step of the way to a healthier, stronger, and more confident you.</p>
+    </div>
+  </div>
+
+
+
+  <section class="team-section">
+    <h2>OUR EXPERTS</h2>
+    <div class="team-members">
+      <div class="team-member">
+        <img src="https://media.istockphoto.com/id/618209684/photo/strong-muscular-men.jpg?s=612x612&w=0&k=20&c=VrrIrkkl1A-UVXlrgllWCJKNga6niorNzvB2nIw9pDM=" alt="Trainer 1">
+        <div class="member-info">
+          <h3>CHRIS DINO</h3>
+          <p >Wellness  Coach</p>
+        
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://w0.peakpx.com/wallpaper/103/248/HD-wallpaper-fitness-gym-girl-fitness-girls-gym-exercise.jpg" alt="Trainer 2">
+        <div class="member-info">
+          <h3>RONNIE BUSMTEAD</h3>
+          <p>Diet Consultant </p>
+        
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://img.freepik.com/premium-photo/muscleup-exercise-young-man-doing-intense-cross-fit-workout-gym-gymnastic-rings_124865-17643.jpg" alt="Trainer 3">
+        <div class="member-info">
+          <h3>RAMON COLEMAN</h3>
+          <p>Exercise Specialist</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <br>
+      <br>
+    
+
+
+      <div class="banner">
+          <div class="banner-content">
+            <div class="logo"><h1>SMART<span class="highlight">FIT</h2></span></div>
+              <p style="color:white;">
+                "Strong body, sharp mind—train both to unlock your full potential." 💪🧠</p>
+              <button class="btn"  onclick="window.location.href='/signup1'" >BECOME A MEMBER</button>
+          </div>
+      </div>
+    </section> 
+    
+    <br>
+    <br>
+    
+
+  </body>
+  </html>
+    
+

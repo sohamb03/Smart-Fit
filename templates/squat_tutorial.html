@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Trends</title>
+  <style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f8f8f8;
+    }
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 10px 20px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo .highlight {
+      color: #ff4d4d;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li {
+      display: inline-block;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+
+    .nav-links .btn-signup {
+      background: #ff4d4d;
+      padding: 8px 15px;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .nav-links .btn-signup:hover {
+      background: #e63333;
+    }
+
+    .container1 {
+        display: flex;
+        width: 90%;
+        max-width: 1300px;
+        background-color: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        gap: 20px; /* Space between sections */
+        padding: 80px;
+        height: 550px; /* Set a fixed height */
+        align-items: stretch; /* Ensures both sections stretch to match the height */
+    }
+
+    .image-section {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-section video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .content-section {
+        flex: 1;
+        padding: 40px;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 8px;
+    }
+
+    .content-section h4 {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin: 0;
+    }
+
+    .content-section h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 10px 0;
+        color: #e63333;
+    }
+
+    .content-section p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+
+    .arrow-link {
+        margin-top: 20px;
+        position: relative; /* Allows positioning the tooltip */
+        display: inline-block;
+    }
+    
+    .arrow-link a {
+        font-size: 36px; /* Restoring the initial arrow size */
+        color: #ffffff;
+        text-decoration: none;
+        border: 2px solid #ffffff;
+        padding: 10px 15px; /* Adjusted padding to match the original size */
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .arrow-link a:hover {
+        background-color: #e63333;
+        color: #e2d4e9;
+    }
+    
+    .arrow-link span {
+        position: absolute;
+        left: 60px; /* Adjusted for proper tooltip placement */
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none; /* Prevent interference with hover */
+    }
+    
+    .arrow-link a:hover + span {
+        opacity: 1;
+    }
+    
+    
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="logo">SMART<span class="highlight">FIT</span></div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                 </ul>
+        </div>
+      </div>
+  <div class="container1">
+    <div class="image-section">
+        <video controls>
+            <source src="{{ url_for('static', filename='videos/squat.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="content-section">
+      <h4>Check for tutorial</h4>
+      <h1>Squats</h1>
+      <p>
+        To perform a squat, stand with feet shoulder-width apart and toes slightly outward. Keep your chest up, core engaged, and gaze forward. Push your hips back as if sitting in a chair, lowering your body until your thighs are parallel to the ground. Ensure your knees stay aligned with your toes and don't cave inward. Press through your heels to return to a standing position, fully extending your hips and knees while engaging your glutes. Maintain control throughout the movement to avoid injury.
+      </p>
+      <div class="arrow-link">
+        <a onclick="window.location.href='/squats'">&#8594;</a>
+        <span>Go forward to correct your posture</span>
+    </div>
+    
+    
+    
+    </div>
+  </div>
+</body>
+</html>

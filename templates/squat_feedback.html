@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Squat Feedback</title>
+  <style>
+    body {
+      background: #1a1a1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #00ffff;
+    }
+    .feedback-box {
+      background: #2e2e2e;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffff;
+    }
+    .feedback-item {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Squat Feedback</h1>
+  <div class="feedback-box">
+    <div class="feedback-item">🕒 Duration: {{ feedback["Total Duration (sec)"] }} sec</div>
+    <div class="feedback-item">💪 Squats Completed: {{ count }}</div>
+    <div class="feedback-item">🔥 Calories Burnt: {{ feedback["Calories Burnt"] }}</div>
+    <div class="feedback-item">⚡ Reps per Minute: {{ feedback["Counts per Minute"] }}</div>
+    <div class="feedback-item">🕐 Avg Time per Rep: {{ feedback["Average Time per Exercise (sec)"] }}s</div>
+    <div class="feedback-item">🚀 Workout Intensity: {{ feedback["Workout Intensity"] }}</div>
+    <div class="feedback-item">✅ Efficiency Ratio: {{ feedback["Efficiency Ratio"] }}</div>
+  </div>
+  
+</body>
+</html>

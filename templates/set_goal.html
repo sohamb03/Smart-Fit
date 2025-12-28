@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Your Goal</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .goal-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .goal-option {
+            background-color: #F4502F;
+            color: white;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .goal-option:hover {
+            transform: scale(1.05);
+            background-color: #d83e1c;
+        }
+        .goal-option img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+        .goal-label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>SELECT YOUR FITNESS GOAL</h1>
+    
+    <form method="POST" action="http://127.0.0.1:5000/index" id="goalForm">
+        <input type="hidden" name="goal" id="goalInput">
+
+        <div class="goal-container">
+            <div class="goal-option" onclick="submitGoal('gain')">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/dumbbell.png" alt="Gain">
+                <div class="goal-label">Gain Weight</div>
+            </div>
+
+            <div class="goal-option" onclick="submitGoal('lose')">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/dumbbell.png" alt="Lose">
+                <div class="goal-label">Lose Weight</div>
+            </div>
+
+            <div class="goal-option" onclick="submitGoal('maintain')">
+                <img src="https://img.icons8.com/ios-filled/100/ffffff/dumbbell.png" alt="Maintain">
+                <div class="goal-label">Maintain Weight</div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function submitGoal(goal) {
+            const input = document.getElementById("goalInput");
+            input.value = goal;
+            document.getElementById("goalForm").submit();
+        }
+    </script>
+</body>
+</html>

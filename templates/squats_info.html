@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Squat Exercise Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+  }
+
+  .container {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* ✅ Centering vertically */
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .image-section {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-section img {
+    max-height: 550px;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .steps-section {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ✅ Center steps vertically */
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+
+  .circle {
+    background-color: #f2542d;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 15px;
+    font-size: 1.1rem;
+  }
+
+  .step h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .step p {
+    margin: 4px 0 0;
+    color: #555;
+  }
+</style>
+<body>
+  <div class="container">
+    <h1 class="title">Squat Exercise Guide</h1>
+    <div class="content">
+      <div class="image-section">
+        <img src="https://cdn.vectorstock.com/i/500p/31/90/exercise-guide-man-doing-air-squat-in-2-steps-vector-34233190.jpg" alt="Squat Guide Image" />
+      </div>
+      <div class="steps-section">
+        <div class="step">
+          <div class="circle">01</div>
+          <div>
+            <h2>Stand straight</h2>
+            <p>Keep your feet shoulder-width apart and your back straight.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">02</div>
+          <div>
+            <h2>Lower down</h2>
+            <p>Push your hips back and bend your knees like you're sitting on a chair.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">03</div>
+          <div>
+            <h2>Keep chest up</h2>
+            <p>Make sure your chest is lifted and knees do not go past your toes.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">04</div>
+          <div>
+            <h2>Hold position</h2>
+            <p>Pause for a second at the bottom of the squat.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">05</div>
+          <div>
+            <h2>Push back up</h2>
+            <p>Drive through your heels to return to standing position.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+        <button onclick="window.location.href='/squats'" style="background-color: #f2542d; color: white; border: none; padding: 15px 30px; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">
+          Go Check Your Form
+        </button>
+      </div>
+  </div>
+</body>
+</html>

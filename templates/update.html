@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Entry</title>
+</head>
+<body>
+    <h1>Update Fitness Entry</h1>
+    <form method="POST">
+        <input type="date" name="date" value="{{ record.date }}" required>
+        <input type="text" name="exercise" value="{{ record.exercise }}" required>
+        <input type="number" name="duration" value="{{ record.duration }}" required>
+        <input type="number" name="weight" step="0.1" value="{{ record.weight }}" required>
+        <button type="submit">Update</button>
+    </form>
+    
+</body>
+</html>

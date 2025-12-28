@@ -1,0 +1,207 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            padding: 10px 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo .highlight {
+            color: #ff4d4d;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff4d4d;
+        }
+
+        .header-section {
+            text-align: center;
+            margin: 80px 0 20px 0;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header-section h1 span {
+            color: #e74c3c;
+        }
+
+        .header-section p {
+            font-size: 1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 10px auto;
+            line-height: 1.5;
+        }
+
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .exercise-card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise-card:hover {
+            transform: scale(1.05);
+        }
+
+        .exercise-card img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            object-fit: cover; /* ensures the image fits nicely in the space */
+            border-radius: 10%;
+        }
+
+        .exercise-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .exercise-card button {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background: #e63333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="container">
+        <div class="logo">SMART<span class="highlight">FIT</span></div>
+        <ul class="nav-links">
+            <li><a href="http://127.0.0.1:5000">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/contact_us">Contact Us</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Header Section -->
+<div class="header-section">
+    <h1>PICK <span>EXERCISE</span></h1>
+    <p>"Pick from a variety of exercises designed to correct your posture, including Squats, Bicep Curls, and Shoulder Raises. Receive real-time feedback to perfect your form and achieve your fitness goals!"</p>
+</div>
+
+<!-- Exercise Grid Section -->
+<div class="exercise-grid">
+    <div class="exercise-card">
+        <img src="https://i.pinimg.com/originals/4e/94/28/4e94280d38e4dae633375284729c3016.gif" alt="Squats">
+        <h2>Squats</h2>
+        <button onclick="window.location.href='/squat_tutorial'">Select</button>
+    </div>
+
+    <div class="exercise-card">
+        <br>
+        <br>
+        <br>
+        <img src="https://i.pinimg.com/originals/f2/0f/77/f20f770d2eb875fe6ca4ba0f577e8687.gif" alt="Single Arm Rowing" style="width: 350px; height: 300px; object-fit: contain; border-radius: 10px;">
+        <h2>Single Arm Rowing</h2>
+        <button onclick="window.location.href='/arm_rowing'">Select</button>
+    </div>
+    <div class="exercise-card">
+        <img src="https://i.pinimg.com/originals/c9/54/3e/c9543eaea3e7e8e928f12589a94ce8a7.gif" alt="Shoulder Raises">
+        <h2>Shoulder Raises</h2>
+        <button onclick="window.location.href='/shoulder_raises'">Select</button>
+    </div>
+    <div class="exercise-card">
+        <img src="https://i.pinimg.com/originals/d4/b2/33/d4b23338a126930f385ca2b55d5acd2a.gif" alt="Lunges">
+        <h2>Lunges</h2>
+        <button onclick="window.location.href='/lunges'">Select</button>
+    </div>
+    <div class="exercise-card">
+        <img src="https://i.pinimg.com/originals/8c/53/27/8c532774e4e1c524576bf1fb829ad895.gif" alt="Bicep Curls">
+        <h2>Bicep Curls</h2>
+        <button onclick="window.location.href='/bicep_curls'">Select</button>
+    </div>
+    <div class="exercise-card">
+        <img src="https://i.pinimg.com/originals/71/84/8f/71848f7a2eff6a9aac9376e936254903.gif" alt="Tricep pushback">
+        <h2>Tricep Pushback</h2>
+        <button onclick="window.location.href='/tricep_pushback'">Select</button>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+

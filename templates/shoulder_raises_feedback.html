@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shoulder Raise Feedback</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #333333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+        background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+    }
+
+    h1 {
+      color: #f44336;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .feedback-box {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .feedback-item {
+      margin: 15px 0;
+      font-size: 18px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+    }
+
+    .feedback-item:last-child {
+      border-bottom: none;
+    }
+
+    .button-container {
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background-color: #f44336;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #d32f2f;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .feedback-box {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Shoulder Raise Feedback</h1>
+  {% if feedback %}
+    <div class="feedback-box">
+      {% for key, value in feedback.items() %}
+        <div class="feedback-item"><strong>{{ key }}:</strong> {{ value }}</div>
+      {% endfor %}
+    </div>
+    <div class="button-container">
+      <a class="btn" href="/shoulder_raises">Back to Exercise</a>
+    </div>
+  {% else %}
+    <p>No feedback data available. Please perform some raises first.</p>
+  {% endif %}
+</body>
+</html>

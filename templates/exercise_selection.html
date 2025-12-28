@@ -1,0 +1,211 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background :white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+
+        /* Navbar */
+        .navbar {
+          width: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 10;
+          padding: 10px 20px;
+        }
+    
+        .container {
+          display: flex;
+          
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+    
+        .logo {
+          color: white;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+    
+        .logo .highlight {
+          color: #ff4d4d;
+        }
+    
+        .nav-links {
+          list-style: none;
+          display: flex;
+          gap: 20px;
+        }
+    
+        .nav-links li {
+          display: inline-block;
+        }
+    
+        .nav-links a {
+          text-decoration: none;
+          color: white;
+          font-size: 1rem;
+          transition: color 0.3s;
+        }
+    
+        .nav-links a:hover {
+          color: #ff4d4d;
+        }
+    
+        .nav-links .btn-signup {
+          background: #ff4d4d;
+          padding: 8px 15px;
+          border-radius: 4px;
+          color: white;
+          font-weight: bold;
+          transition: background 0.3s;
+        }
+    
+        .nav-links .btn-signup:hover {
+          background: #e63333;
+        }
+
+        .header-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header-section h1 span {
+            color: #e74c3c; /* Red for emphasis */
+        }
+
+        .header-section p {
+            font-size: 1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 10px auto;
+            line-height: 1.5;
+        }
+
+        .pricing-table {
+            display: flex;
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+        }
+
+        .pricing-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card button {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .pricing-card button:hover {
+            background: #ff4d4d;
+        }
+
+        .pricing-card.basic h2 {
+            color: black;
+        }
+
+        .pricing-card.standard h2 {
+            color: black;
+        }
+
+        .pricing-card.premium h2 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="container">
+            <div class="logo">SMART<span class="highlight">FIT</span></div>
+            <ul class="nav-links">
+                <li><a href="http://127.0.0.1:5000">Home</a></li>
+                <li><a href="http://127.0.0.1:5000/contact_us">Contact Us</a></li>
+            </ul>
+            
+        </div>
+      </div>
+   <br>   
+   <br>
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>PICK <span>EXERCISE</span></h1>
+        <p>
+            "Pick from a variety of exercises designed to correct your posture, including Squats, Bicep Curls, and Shoulder Raises. Receive real-time feedback to perfect your form and achieve your fitness goals!"
+        </p>
+    </div>
+
+    <!-- Pricing Table -->
+    <div class="pricing-table">
+        <div class="pricing-card basic">
+            <img src="https://i.pinimg.com/originals/4e/94/28/4e94280d38e4dae633375284729c3016.gif" alt="Squats">
+            <h2>Squats</h2>
+            <button onclick="window.location.href='/squat_tutorial'">Select</button>
+        </div>
+        <div class="pricing-card standard">
+            <img src="https://i.pinimg.com/originals/8c/53/27/8c532774e4e1c524576bf1fb829ad895.gif" alt="Bicep Curls">
+            <h2>Bicep Curls</h2>
+            <button onclick="window.location.href='/bicep_curls'">Select</button>
+        </div>
+        <div class="pricing-card premium">
+            <img src="https://i.pinimg.com/originals/c9/54/3e/c9543eaea3e7e8e928f12589a94ce8a7.gif" alt="Shoulder Press">
+            <h2>Shoulder Raises</h2>
+            <button>Select</button>
+        </div>
+    </div>
+</body>
+</html> {% endcomment %}
