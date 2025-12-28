@@ -1,4 +1,24 @@
-# Smart Fit 🏋️‍♂️  
+# Smart Fit 🏋️‍♂️ 
+[![DOI](https://img.shields.io/badge/DOI-10.17577/IJERTV14IS050167-blue)](https://doi.org/10.17577/IJERTV14IS050167)
+[![Journal](https://img.shields.io/badge/Journal-IJERT-green)](https://doi.org/10.17577/IJERTV14IS050167)
+## 📄 Research Publication
+
+This project is backed by a research paper published in an international journal.
+
+**Title:** Real-Time Posture Analysis and Personalized Nutrition Planning using Computer Vision System  
+**Journal:** International Journal of Engineering Research & Technology (IJERT)  
+**Volume & Issue:** Volume 14, Issue 05 (May 2025)  
+**DOI:** 10.17577/IJERTV14IS050167  
+**Published:** 19 May 2025  
+**ISSN (Online):** 2278-0181  
+**License:** Creative Commons Attribution 4.0 (CC BY 4.0)
+
+👨‍💻 **Authors:**  
+Soham Balekundri, Soumil Kumar, Dr. M. V. Sudhamani, Surag Y. S.
+
+🔗 **Paper Link:** https://doi.org/10.17577/IJERTV14IS050167  
+📥 **Full PDF:** (add direct IJERT PDF link if available)
+
 ### AI-Based Exercise Posture Correction & Rep Counter
 
 Smart Fit is a **web-based AI fitness assistant** that provides **real-time posture correction, repetition counting, and performance feedback** for various gym exercises using **computer vision and machine learning**.
@@ -91,7 +111,7 @@ Deployment on cloud (AWS / GCP)
 
 👨‍💻 Author
 
-Soham
+Soham |
 Bachelor’s in Information Science & Engineering
 AI | Computer Vision | Full Stack Development
 
