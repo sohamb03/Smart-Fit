@@ -100,5 +100,4 @@ AI | Computer Vision | Full Stack Development
 This project is for educational and research purposes.
 Feel free to fork and enhance it.
 
-## 📁 Project Structure
 
