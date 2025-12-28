@@ -12,9 +12,6 @@ This project is backed by a research paper published in an international journal
 **ISSN (Online):** 2278-0181  
 **License:** Creative Commons Attribution 4.0 (CC BY 4.0)
 
-👨‍💻 **Authors:**  
-Soham Balekundri, Soumil Kumar, Dr. M. V. Sudhamani, Surag Y. S.
-
 🔗 **Paper Link:** https://www.ijert.org/real-time-posture-analysis-and-personalized-nutrition-planning-using-computer-vision-system 
 
 ### AI-Based Exercise Posture Correction & Rep Counter
