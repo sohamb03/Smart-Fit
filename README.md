@@ -1,6 +1,5 @@
 # Smart Fit 🏋️‍♂️ 
-[![DOI](https://img.shields.io/badge/DOI-10.17577/IJERTV14IS050167-blue)](https://doi.org/10.17577/IJERTV14IS050167)
-[![Journal](https://img.shields.io/badge/Journal-IJERT-green)](https://doi.org/10.17577/IJERTV14IS050167)
+
 ## 📄 Research Publication
 
 This project is backed by a research paper published in an international journal.
@@ -16,8 +15,7 @@ This project is backed by a research paper published in an international journal
 👨‍💻 **Authors:**  
 Soham Balekundri, Soumil Kumar, Dr. M. V. Sudhamani, Surag Y. S.
 
-🔗 **Paper Link:** https://doi.org/10.17577/IJERTV14IS050167  
-📥 **Full PDF:** (add direct IJERT PDF link if available)
+🔗 **Paper Link:** https://www.ijert.org/real-time-posture-analysis-and-personalized-nutrition-planning-using-computer-vision-system 
 
 ### AI-Based Exercise Posture Correction & Rep Counter
 
